@@ -35,13 +35,9 @@ public class MainCon {
 		
 		List<MainDTO> main = mainMapper.main();
 		
-		//System.out.println(main);
-		
 		List<ShippingDTO> shipping = mainMapper.shipping();
 		
 		AllDTO all = new AllDTO(main, shipping);
-		
-		
 		
 		session.setAttribute("test", all);
 		

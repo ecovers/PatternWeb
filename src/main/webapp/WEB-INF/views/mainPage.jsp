@@ -49,7 +49,7 @@ List<ShippingDTO> shipping = all.getShippingDTO();
 	</div>
 
 	<!-- 3번  -->
-	<div id = "no3" style="float: left; width: 100%; height: 50%; overflow: auto">
+	<div id = "no3">
 		<p style="text-align: center;">출하내역(제품 이름을 제외한 나머지 임시 데이터)</p>
 		<table class="table" border="1" style="text-align: center; margin-left: 3.5%;">
 			<th style="width: 400px;">제품 이름</th>
