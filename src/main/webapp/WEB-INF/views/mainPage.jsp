@@ -1,3 +1,4 @@
+<%@page import="java.text.SimpleDateFormat"%>
 <%@page import="com.example.demo.dto.ShippingDTO"%>
 <%@page import="com.example.demo.dto.AllDTO"%>
 <%@page import="java.util.List"%>
@@ -35,14 +36,15 @@ List<ShippingDTO> shipping = all.getShippingDTO();
 			<th style="width: 100px;">규격</th>
 			<th style="width: 200px;">제품 등록 시간</th>
 
-			<%for(int i = 0; i < main.size(); i++){ %>
+			<%SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+			for(int i = 0; i < main.size(); i++){ %>
 			<tr>
 			    <td><%=main.get(i).getProduct_name() %></td>
 			    <td><%=main.get(i).getProduct_number() %></td>
 			    <td><%=main.get(i).getProduct_location() %></td>
 			    <td><%=main.get(i).getProduct_ea() %></td>
 			    <td><%=main.get(i).getProduct_size() %></td>
-			    <td><%=main.get(i).getData_time() %></td>
+			    <td><%=format.format(main.get(i).getData_time()) %></td>
 			</tr>
 			<%} %>
 		</table>
@@ -51,7 +53,7 @@ List<ShippingDTO> shipping = all.getShippingDTO();
 	<!-- 3번  -->
 	<div id = "no3">
 		<p style="text-align: center;">출하내역(제품 이름을 제외한 나머지 임시 데이터)</p>
-		<table class="table" border="1" style="text-align: center; margin-left: 3.5%;">
+		<table class="table" border="1" style="text-align: center;">
 			<th style="width: 400px;">제품 이름</th>
 			<th style="width: 100px;">규격</th>
 			<th style="width: 100px;">단위</th>

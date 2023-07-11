@@ -1,5 +1,6 @@
 package com.example.demo.controller;
 
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 import org.mybatis.spring.annotation.MapperScan;
@@ -29,9 +30,12 @@ public class MainCon {
 	
 	
 	
+	
 	@GetMapping("/") 
 	public String connect(HttpServletRequest request, HttpServletResponse response, HttpSession session,
 			Model model) {
+		
+		
 		
 		List<MainDTO> main = mainMapper.main();
 		
