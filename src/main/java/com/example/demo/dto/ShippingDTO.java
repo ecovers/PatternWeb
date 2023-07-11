@@ -13,15 +13,18 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-public class MainDTO {
+public class ShippingDTO {
 	
 	private int id;
 	private String product_name;
-	private String product_number;
+	private String shipment_ea;
+	private String check_ea;
+	private String pass_ea;
+	private String pass_rate;
+	private String error_list;
 	private String product_size;
-	private String product_location;
 	private String product_ea;
-	private String product_unit;
+	
 	private Date data_time;
 
 	

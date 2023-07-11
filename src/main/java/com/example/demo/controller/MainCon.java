@@ -11,7 +11,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.example.demo.dto.AllDTO;
 import com.example.demo.dto.MainDTO;
+import com.example.demo.dto.ShippingDTO;
 import com.example.demo.mapper.MainMapper;
 
 import jakarta.servlet.http.HttpServletRequest;
@@ -19,12 +21,12 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
 
-
 @Controller
-public class test {
+public class MainCon {
 	
 	@Autowired
 	MainMapper mainMapper;
+	
 	
 	
 	@GetMapping("/") 
@@ -35,9 +37,15 @@ public class test {
 		
 		//System.out.println(main);
 		
-		session.setAttribute("test", main);
+		List<ShippingDTO> shipping = mainMapper.shipping();
 		
-		return "index";
+		AllDTO all = new AllDTO(main, shipping);
+		
+		
+		
+		session.setAttribute("test", all);
+		
+		return "mainPage";
 		
 	}
 	

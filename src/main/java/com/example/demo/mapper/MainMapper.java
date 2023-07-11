@@ -10,21 +10,20 @@ import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.dto.MainDTO;
+import com.example.demo.dto.ShippingDTO;
 
 
 @Component
 @Mapper
 public interface MainMapper {
 	
-	@Select("SELECT * FROM productinfo")
+	@Select("SELECT * FROM product_admin")
 	List<MainDTO> main();
 	
-	@Select("SELECT * FROM productinfo where seq=1")
-	MainDTO test();
+	@Select("select b.product_name , b.product_size , b.product_ea , a.shipment_ea , a.check_ea , a.pass_ea , a.pass_rate , a.error_list from shipment_info a join product_admin b on a.product_name = b.product_name;")
+	List<ShippingDTO> shipping();
 	
-	
-//	@Select("SELECT * FROM simpleboard")
-//	List<MainDTO> test();
+
 
 }
 
