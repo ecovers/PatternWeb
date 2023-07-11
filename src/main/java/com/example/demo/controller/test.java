@@ -31,14 +31,9 @@ public class test {
 	public String connect(HttpServletRequest request, HttpServletResponse response, HttpSession session,
 			Model model) {
 		
-		System.out.println("테스트");
+		List<MainDTO> main = mainMapper.main();
 		
-		//List<MainDTO> main = mainMapper.main();
-		MainDTO main = mainMapper.test();
-		
-		System.out.println(main);
-
-		System.out.println("테스트");
+		//System.out.println(main);
 		
 		session.setAttribute("test", main);
 		
