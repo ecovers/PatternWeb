@@ -21,46 +21,32 @@
 	let check_dic = {"성공" : "연결됨"};
 	<%  SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss"); %>
 	
-			$.ajax({
-				  type : 'post',
-				  url : 'http://127.0.0.1:5000/',
-				  data : check_dic,
-				  dataType : 'json',
-				  success : function(res) {
-					//alert("연결됨");
-					<%
-					
-					
-					AllDTO all = (AllDTO)session.getAttribute("test");
-
-					List<MainDTO> main = all.getMainDTO();
-
-					List<ShippingDTO> shipping = all.getShippingDTO();
-
+			
+	function callAjax(){
+		
+		
+		
+		
+		$.ajax({
+			  type : 'post',
+			  url : 'http://127.0.0.1:5000/',
+			  data : check_dic,
+			  dataType : 'json',
+			  success : function(res) {
+				alert(res);
 				
-					for(int i = 0; i < main.size(); i++){ %>
-					
-					var Product_name<%=i%> = "<%=main.get(i).getProduct_name() %>";
-					var Product_number<%=i%> = <%=main.get(i).getProduct_number() %>;
-					var Product_location<%=i%> = <%=main.get(i).getProduct_location() %>;
-					var Product_ea<%=i%> = <%=main.get(i).getProduct_ea() %>;
-					var Product_size<%=i%> = "<%=main.get(i).getProduct_size() %>";
-					var Data_time<%=i%> = "<%=format.format(main.get(i).getData_time()) %>";
-					
-					
-					document.getElementById("name<%=i%>").innerHTML = Product_name<%=i%>;
-					document.getElementById("number<%=i%>").innerHTML = Product_number<%=i %>;
-					document.getElementById("location<%=i%>").innerHTML = Product_location<%=i%>;
-					document.getElementById("ea<%=i%>").innerHTML = Product_ea<%=i %>;
-					document.getElementById("size<%=i%>").innerHTML = Product_size<%=i%>;
-					document.getElementById("date<%=i%>").innerHTML = Data_time<%=i %>;	
-					
-					<%} %>
-				  },
-				  error : function() {
-				  	alert('요청 실패쓰');
-				  }
-				})	
+				
+				
+			  },
+			  error : function() {
+			  	alert('요청 실패쓰');
+			  }
+			})
+	}
+	
+	
+	setInterval(callAjax, 1000);
+	
 
 	</script>
 
@@ -81,7 +67,7 @@
 			<th style="width: 100px;">규격</th>
 			<th style="width: 200px;">제품 등록 시간</th>
 
-			<% 
+			<%-- <% 
 			for(int i = 0; i < main.size(); i++){ %>
 			<tr>
 			    <td id = name<%=i %>></td>
@@ -91,7 +77,7 @@
 			    <td id = size<%=i %>></td>
 			    <td id = date<%=i %>></td>
 			</tr>
-			<%} %>
+			<%} %> --%>
 		</table>
 	</div>
 
@@ -108,7 +94,7 @@
 			<th style="width: 100px;">합격률</th>
 			<th style="width: 800px;">불량내역 및 조치사항</th>
 			
-			<%for(int i = 0; i < shipping.size(); i++){ %>
+			<%-- <%for(int i = 0; i < shipping.size(); i++){ %>
 			<tr>
 			    <td><%=shipping.get(i).getProduct_name() %></td>
 			    <td><%=shipping.get(i).getProduct_size() %></td>
@@ -119,7 +105,7 @@
 			    <td><%=shipping.get(i).getPass_rate() %></td>
 			    <td><%=shipping.get(i).getError_list() %></td>
 			</tr>
-			<%} %>
+			<%} %> --%>
 
 		</table>
 

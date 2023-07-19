@@ -45,7 +45,7 @@ public class MainCon {
 		
 		session.setAttribute("test", all);
 		
-		return "mainPage";
+		return "mainPage2";
 		
 	}
 	
