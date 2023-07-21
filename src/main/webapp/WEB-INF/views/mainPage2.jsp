@@ -16,37 +16,85 @@
 <link rel="stylesheet" href="css/main.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
+<%
+AllDTO all = (AllDTO)session.getAttribute("test");
+
+List<MainDTO> main = all.getMainDTO();
+
+List<ShippingDTO> shipping = all.getShippingDTO(); %>
+
+
 <script type="text/javascript">
+
+let check_dic = {"성공" : "연결됨"};
+<%  SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss"); %>
+
 		
-	let check_dic = {"성공" : "연결됨"};
-	<%  SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss"); %>
-	
+function callAjax(){		
+	$.ajax({
+		  type : 'post',
+		  url : 'http://192.168.50.51:5000/',
+		  data : check_dic,
+		  dataType : 'json',
+		  success : function(res) {
+			//alert(res['data2']);
+			var res1 = res['data1'];
+			var res2 = res['data2'];	
 			
-	function callAjax(){
+			// 2번
+			<% for(int i = 0; i < main.size(); i++){ %>
+			
+			var Product_name<%=i%> = res1[<%=i%>][1];
+			var Product_number<%=i%> = res1[<%=i%>][2];
+			var Product_location<%=i%> = res1[<%=i%>][4];
+			var Product_ea<%=i%> = res1[<%=i%>][5];
+			var Product_size<%=i%> = res1[<%=i%>][3];
+			var Data_time<%=i%> = res1[<%=i%>][7];
+			
+			
+			document.getElementById("name<%=i%>").innerHTML = Product_name<%=i%>;
+			document.getElementById("number<%=i%>").innerHTML = Product_number<%=i %>;
+			document.getElementById("location<%=i%>").innerHTML = Product_location<%=i%>;
+			document.getElementById("ea<%=i%>").innerHTML = Product_ea<%=i %>;
+			document.getElementById("size<%=i%>").innerHTML = Product_size<%=i%>;
+			document.getElementById("date<%=i%>").innerHTML = Data_time<%=i %>;	
+			
+			<%} %>
+			
+			// 3번
+			<% for(int i = 0; i < shipping.size(); i++){ %>
+			
+			var sProduct_name<%=i%> = res2[<%=i%>][0];
+			var sProduct_size<%=i%> = res2[<%=i%>][1];
+			var sProduct_ea<%=i%> = res2[<%=i%>][2];
+			var sShipment_ea<%=i%> = res2[<%=i%>][3];
+			var sCheck_ea<%=i%> = res2[<%=i%>][4];
+			var sPass_ea<%=i%> = res2[<%=i%>][5];
+			var sPass_rate<%=i%> = res2[<%=i%>][6];
+			var sError_list<%=i%> = res2[<%=i%>][7];
+			
+			document.getElementById("sName<%=i%>").innerHTML = sProduct_name<%=i%>;
+			document.getElementById("sSize<%=i%>").innerHTML = sProduct_size<%=i %>;
+			document.getElementById("sProduct<%=i%>").innerHTML = sProduct_ea<%=i%>;
+			document.getElementById("sShipment<%=i%>").innerHTML = sShipment_ea<%=i %>;
+			document.getElementById("sCheck<%=i%>").innerHTML = sCheck_ea<%=i%>;
+			document.getElementById("sPass<%=i%>").innerHTML = sPass_ea<%=i %>;
+			document.getElementById("sRate<%=i%>").innerHTML = sPass_rate<%=i %>;	
+			document.getElementById("sList<%=i%>").innerHTML = sError_list<%=i %>;	
+			
+			<%} %>
+			
+		  },
+		  error : function() {
+		  	alert('요청 실패쓰');
+		  }
+		})
 		
-		
-		
-		
-		$.ajax({
-			  type : 'post',
-			  url : 'http://127.0.0.1:5000/',
-			  data : check_dic,
-			  dataType : 'json',
-			  success : function(res) {
-				alert(res);
-				
-				
-				
-			  },
-			  error : function() {
-			  	alert('요청 실패쓰');
-			  }
-			})
-	}
-	
-	
-	setInterval(callAjax, 1000);
-	
+}
+
+
+setInterval(callAjax, 500);
+
 
 	</script>
 
@@ -67,7 +115,7 @@
 			<th style="width: 100px;">규격</th>
 			<th style="width: 200px;">제품 등록 시간</th>
 
-			<%-- <% 
+			<% 
 			for(int i = 0; i < main.size(); i++){ %>
 			<tr>
 			    <td id = name<%=i %>></td>
@@ -77,7 +125,7 @@
 			    <td id = size<%=i %>></td>
 			    <td id = date<%=i %>></td>
 			</tr>
-			<%} %> --%>
+			<%} %>
 		</table>
 	</div>
 
@@ -94,18 +142,18 @@
 			<th style="width: 100px;">합격률</th>
 			<th style="width: 800px;">불량내역 및 조치사항</th>
 			
-			<%-- <%for(int i = 0; i < shipping.size(); i++){ %>
+			<%for(int i = 0; i < shipping.size(); i++){ %>
 			<tr>
-			    <td><%=shipping.get(i).getProduct_name() %></td>
-			    <td><%=shipping.get(i).getProduct_size() %></td>
-			    <td><%=shipping.get(i).getProduct_ea() %></td>
-			    <td><%=shipping.get(i).getShipment_ea() %></td>
-			    <td><%=shipping.get(i).getCheck_ea() %></td>
-			    <td><%=shipping.get(i).getPass_ea() %></td>
-			    <td><%=shipping.get(i).getPass_rate() %></td>
-			    <td><%=shipping.get(i).getError_list() %></td>
+			    <td id = sName<%=i %>></td>
+			    <td id = sSize<%=i %>></td>
+			    <td id = sProduct<%=i %>></td>
+			    <td id = sShipment<%=i %>></td>
+			    <td id = sCheck<%=i %>></td>
+			    <td id = sPass<%=i %>></td>
+			    <td id = sRate<%=i %>></td>
+			    <td id = sList<%=i %>></td>
 			</tr>
-			<%} %> --%>
+			<%} %>
 
 		</table>
 

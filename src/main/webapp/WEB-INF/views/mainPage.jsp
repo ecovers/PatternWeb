@@ -23,7 +23,7 @@
 	
 			$.ajax({
 				  type : 'post',
-				  url : 'http://127.0.0.1:5000/',
+				  url : 'http://192.168.50.51:5000/',
 				  data : check_dic,
 				  dataType : 'json',
 				  success : function(res) {
