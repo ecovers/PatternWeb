@@ -15,7 +15,7 @@
 
 <link rel="stylesheet" href="css/main.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
+<!-- <script type="text/javascript" src="js/camera.js" defer></script> -->
 <%
 AllDTO all = (AllDTO)session.getAttribute("test");
 
@@ -92,17 +92,39 @@ function callAjax(){
 		
 }
 
+callAjax()
 
-setInterval(callAjax, 500);
 
+setInterval(callAjax, 1000);
 
-	</script>
+</script>
+	
 
 </head>
 <body>
-	<!-- 1번  -->
-	<div id ="no1" >실시간 카메라
-	</div>
+	
+
+	<%@include file = "header.jsp" %>
+	
+	<!-- <div id="main">
+    
+  </div> -->
+  
+<!--   <script >
+  
+  $(document).ready(function(){
+	$("#header").load("header.html");
+
+});
+
+
+  
+</script> -->
+
+<!-- <link rel="import" href="header.jsp"> -->
+
+<!-- 1번  -->
+<iframe src="http://192.168.50.49:5000" style="width:48%; height:55%">대체 내용</iframe> 
 
 	<!-- 2번  -->
 	<div id = "no2">
@@ -158,5 +180,9 @@ setInterval(callAjax, 500);
 		</table>
 
 	</div>
+	
+	
+	<%@include file = "Footer.jsp" %>
+	
 </body>
 </html>

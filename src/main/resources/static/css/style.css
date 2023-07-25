@@ -1,0 +1,228 @@
+/*background: var(--color-beige);*/
+
+@media (max-width: 767px){
+	/*모바일*/
+    #contents{
+        background-color:#00ffff;
+        min-height: 500px;  
+        margin-bottom: 10px; 
+        margin-right: 0px;
+        float: left;
+        width: 100%;
+        text-align: center;
+    }
+
+    header nav ul {
+        text-align: center;
+    }
+
+    header nav ul li {
+        padding: 10px 10px;
+    }
+  
+    div {
+        font-size: 12px;
+        text-align: center;
+    }
+   
+    .no_dot {
+        list-style-type: none;
+        padding: 0%;
+        margin-left: 1em;
+    }
+
+    #600px_br{
+        text-align: center;
+    }
+
+    li{
+        padding: 0.5em
+    }
+
+    p {
+        margin: 24px;
+        font-size: 14px;
+        text-align: center;
+    }
+
+    img{
+        float: left;
+        width: 6em;
+        height: auto;
+        margin-top: 0.8em;
+    }
+
+    
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    /*테블릿 세로*/ 
+    #contents{
+        background-color:#00ffff;
+        min-height: 500px;  
+        margin-bottom: 10px; 
+        margin-right: 0px;
+        float: left;
+        width: 100%;
+        text-align: center;
+    }
+
+    header nav ul {
+        text-align: center;
+    }
+
+    header nav ul li {
+        padding: 10px 10px;
+    }
+  
+    div {
+        text-align: center;
+    }
+   
+    .no_dot {
+        list-style-type: none;
+        padding: 0%;
+        margin-left: 1em;
+        float: right;
+    }
+
+    #600px_br{
+        text-align: center;
+    }
+
+    li{
+        padding: 0.5em
+    }
+
+    p {
+        margin: 24px;
+        font-size: 14px;
+        text-align: center;
+    }
+
+    img{
+        float: left;
+        width: 120px;
+        height: auto;
+        margin-top: 0.5rem;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    /*테블릿 가로*/ 
+    #contents{
+        background-color:#00ffff;
+        min-height: 500px;  
+        margin-bottom: 10px; 
+        margin-right: 0px;
+        float: left;
+        width: 100%;
+        text-align: center;
+    }
+
+    header nav ul {
+        text-align: center;
+    }
+
+    header nav ul li {
+        padding: 10px 10px;
+    }
+  
+    div {
+        text-align: center;
+    }
+   
+    .no_dot {
+        list-style-type: none;
+        padding: 0%;
+        margin-left: 1em;
+        float: right;
+    }
+
+    #600px_br{
+        text-align: center;
+    }
+
+    li{
+        padding: 0.5em
+    }
+
+    p {
+        margin: 24px;
+        font-size: 14px;
+        text-align: center;
+    }
+
+    img{
+        float: left;
+        width: 120px;
+        height: auto;
+        margin-top: 0.5rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    /*데스크탑 일반*/ 
+    #contents{
+        background-color:#00ffff;
+        min-height: 500px;  
+        margin-bottom: 10px; 
+        margin-right: 0px;
+        float: left;
+        width: 100%;
+        text-align: center;
+    }
+
+    header nav ul {
+        text-align: center;
+    }
+
+    header nav ul li {
+        padding: 10px 10px;
+    }
+  
+    div {
+        text-align: center;
+    }
+   
+    .no_dot {
+        list-style-type: none;
+        padding: 0%;
+        margin-left: 1em;
+        float: right;
+    }
+
+    #600px_br{
+        text-align: center;
+    }
+
+    li{
+        padding: 0.5em
+    }
+
+    p {
+        margin: 24px;
+        font-size: 14px;
+        text-align: center;
+    }
+
+    img{
+        float: left;
+        width: 120px;
+        height: auto;
+        margin-top: 0.5rem;
+    }
+}
+
+    a{
+        text-decoration-line: none;
+        color: black;
+    }
+
+    #map{
+        width:500px;
+        height:500px;
+         position:relative;
+         margin:0 auto;
+         
+    }
