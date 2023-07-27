@@ -86,7 +86,7 @@ function callAjax(){
 			
 		  },
 		  error : function() {
-		  	alert('요청 실패쓰');
+		  	//alert('요청 실패쓰');
 		  }
 		})
 		
@@ -97,6 +97,19 @@ callAjax()
 
 setInterval(callAjax, 1000);
 
+/* var page_header   = 'header.html';
+var page_footer   = 'footer.html';
+var header_div = document.getElementById('header');
+var footer_div = document.getElementById('footer');
+
+function header_footer_html(){
+    $(header_div).load(page_header, function() {});
+    $(footer_div).load(page_footer, function() {});
+}
+
+header_footer_html();
+
+alert("다불러옴"); */
 </script>
 	
 
@@ -105,6 +118,8 @@ setInterval(callAjax, 1000);
 	
 
 	<%@include file = "header.jsp" %>
+	
+	<%-- <jsp:include page="header.html"/> --%>
 	
 	<!-- <div id="main">
     
@@ -117,9 +132,10 @@ setInterval(callAjax, 1000);
 
 });
 
-
+ 
   
 </script> -->
+
 
 <!-- <link rel="import" href="header.jsp"> -->
 

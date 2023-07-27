@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="css/style.css?after">
     <link rel="stylesheet" href="css/main2.css?after">
     <script src="jquery-3.6.0.js"></script>
-    <script src="js/main11.js"></script>
+    <script src="js/main.js"></script>
     <script>
         document.addEventListener("contextmenu", function(event){
         event.preventDefault();
@@ -22,15 +22,16 @@
     <div class="wrap">
         <header>
             <!--<a href="home.html" class="logo"><img src="css/logo.jpg" title="회사 로고"/></a>-->
-            <h1><a href="home.html" class="logo" style="float:left; margin-left: 2em;">ecovers</a><sub class="logo2" style="float:left;margin-top:2em;margin-left:-12em;">LIFE TECHNOLOGY SERVICE</sub></h1>
+            <h1><a href="home.html" class="logo" style="float:left; margin-left: 2em; font-size: 25px;">ecovers</a>
+            <sub class="logo2" style="float:left; margin-top:2em; margin-left:-12em; margin-bottom:0px">LIFE TECHNOLOGY SERVICE</sub></h1>
             <div class="mBtn"><a href="javascript:;">메뉴열기</a></div>
             <nav class="mNav">
-             
+            
                 <ul class="sub"></ul>
 
                    <div class="closeBtn"><a href="javascript:;"><!--메뉴닫기--></a></div>
                     <li><a href="home.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
+                    <li><a href="about.html" >About</a></li>
                     <li><a href="corporation.html">Corporation</a></li>
                     <li><a href="business.html">Business</a></li>
                     <li><a href="contact.html">Contact Us</a></li>

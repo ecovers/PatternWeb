@@ -40,7 +40,7 @@ a { text-decoration: none; }
 
 /* main */
 *, body { box-sizing: border-box; font-family: 'Montserrat', sans-serif; }
-html  { font-size: 62.5%; }
+html { font-size: 62.5%; }
 .wrap { width: 100%; margin: 0 auto; }
 header { height: 70px;  display: flex; justify-content: space-between; line-height: 70px; padding: 0 20px; }
 .logo { display: block; font-size: 2rem; color: #333; font-weight: 700; text-transform: uppercase; }
